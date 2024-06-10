@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>詞選</title>
+    <style type="text/css">
+    body {background-color:rgb(0, 0, 0);}
+    p {color:rgb(0, 0, 0);}
+    </style>
+    <style>
+         /* CSS 样式 */
+         .logout-button {
+    position: fixed; /* 固定在顶部 */
+    top: 20px; /* 距离顶部的距离 */
+    right: 20px; /* 距离右侧的距离 */
+    background-color: white; /* 白色背景 */
+    color: black; /* 黑色文字 */
+    padding: 10px 20px; /* 按钮内边距 */
+    border: none; /* 去除边框 */
+    border-radius: 3px; /* 圆角边框 */
+    cursor: pointer; /* 光标样式为手型 */
+} /* 光标样式为手型 */
+
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        header {
+            
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333; /* 頁首背景顏色 */
+            color: white; /* 文字顏色 */
+            padding: 10px 0px; /* 頁首間距 */
+            width: 100%;
+            text-align: center;
+            margin-top: 10px; 
+        }
+
+        h1 {
+            font-size: 30px;
+            color:rgb(182, 226, 208);
+        }
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1300px;
+            margin-top: 0px;
+            padding: 0px 0px
+        }
+
+        .nav-column {
+            flex: 1;
+            padding: 0.1px;
+     
+        }
+
+        .nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+            margin: 5px;
+            background-color: #555; /* 導航欄項目背景顏色 */
+            border-radius: 5px;
+            text-align: center;
+            width:80%;
+        }
+
+        .nav a:hover {
+            background-color: #777; /* 滑鼠懸停時的背景顏色 */
+        }
+
+        .poem {
+            display: none;
+            max-width: 800px;
+        }
+
+        .poem.active {
+            display: block;
+        }
+        #current-time {
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .poem a {
+        color: white;
+        text-decoration: none; /* 移除链接的下划线 */
+        }
+        
+    </style>
+</head>
+<body>    
+    <header>
+        <h1 align="center">古詩十九首</h1>
+        <div id="current-time"></div>
+    </header>
+
+   
+    
+    <br>
+    <nav class="nav">
+        <div class="nav-column">
+            <a href="#poem1">定風波<br>蘇軾</a>
+            <a href="#poem11">采桑子·荷花開后西湖好</a>
+        </div>
+        <div class="nav-column">
+            <a href="#poem2">如夢令<br>李清照</a>
+            <a href="#poem12">采桑子·天容水色西湖好</a>
+        </div>
+        <div class="nav-column">
+            <a href="#poem3">江城子·別徐州<br>蘇軾</a>
+            <a href="#poem13">采桑子·殘霞夕照西湖好</a>
+        </div>
+        <div class="nav-column">
+            <a href="#poem4">江城子·密州出獵 蘇軾</a>
+            <a href="#poem14">采桑子·平生為愛西湖好</a>
+        </div>
+        <div class="nav-column">
+            <a href="#poem5">江城子·畫樓簾幕卷新晴</a>
+            <a href="#poem15">長相思·蘋滿溪<br>歐陽修</a>
+        </div>
+        <div class="nav-column">
+            <a href="#poem6">采桑子·輕舟短棹西湖好</a>
+            <a href="#poem16">長相思·花似伊<br>歐陽修</a>
+        </div>
+        <div class="nav-column">
+            <a href="#poem7">采桑子·春深雨過西湖好</a>
+            <a href="#poem17">南歌子·鳳髻金泥帶</a> 
+        </div>
+        <div class="nav-column">
+            <a href="#poem8">采桑子·畫船載酒西湖好</a>
+            <a href="#poem18">少年游·欄干十二獨憑春</a>
+        </div>
+        <div class="nav-column">
+            <a href="#poem9">采桑子·群芳過后西湖好</a>
+            <a href="#poem19">玉樓春·尊前擬把歸期說</a>
+        </div>
+        <div class="nav-column">
+            <a href="#poem10">采桑子·何人解賞西湖好</a>
+            <a href="#poem20">玉樓春·別后不知君遠近</a>
+        </div>
+    </nav>
+
+    <div id="poems">
+        <div class="poem" id="poem1">
+            <h1 style="color:rgb(188, 239, 246)">定風波 蘇軾</h1>
+            <h1 style="color:white">
+            三月七日沙湖道中遇雨。雨具先去，同行皆狼狽，余獨不覺。已而遂晴，故作此詞。<br>
+            莫聽穿林打葉聲，何妨吟嘯且徐行。竹杖芒鞋輕勝馬，誰怕？一蓑煙雨任平生。<br>
+            料峭春風吹酒醒，微冷，山頭斜照卻相迎。回首向來蕭瑟處，歸去，也無風雨也無晴。<br>
+        </h1>
+            <h2 style="color:rgb(216, 250, 225)">譯文<br>
+            不要聽風穿樹林，樹葉帶來風雨之聲，這一切無所謂，我依然一邊灑脫地長嘯，一邊緩步徐行。<br>
+            穿著草鞋，拄著竹仗，比騎馬坐車更加一身輕鬆。誰怕風風雨雨？我漠視這些，一生任憑煙雨迷濛，與我同行。<br>
+            冷冷的春風又把我吹醒，微微感到有些寒冷。斜陽的山頭卻來迎接我。<br>
+            回頭望去，我來時淋雨的地方，一片蕭條，歸去時又一片平靜，也沒有什麼風雨，也無晴。<br>
+            </h2>
+            
+        </div>
+
+        <div class="poem" id="poem2">
+            <h1 style="color:rgb(188, 239, 246)">如夢令 李清照</h1>
+            <h1 style="color:white">
+            昨夜雨疏風驟，濃睡不消殘酒。<br>
+            試問卷簾人，卻道「海棠依舊」。<br>
+            「知否？知否？應是綠肥紅瘦。」<br>
+
+            </h1>
+            <h2 style="color:rgb(216, 250, 225)">譯文<br>
+            昨夜雨點稀疏，晚風急猛，我雖然睡了一夜，仍有餘醉未消。<br>
+            試問卷簾的侍女：海棠花怎麼樣？她說海棠花依然如舊。<br>
+            知道嗎？知道嗎？應是綠葉繁茂，紅花凋零。<br>
+            </h2>
+        </div>
+
+        <div class="poem" id="poem3">
+            <h1 style="color:rgb(188, 239, 246)">江城子·別徐州 蘇軾</h1>
+            <h1 style="color:white">
+            天涯流落思無窮！既相逢，卻匆匆。<br>
+            攜手佳人，和淚折殘紅。為問東風余幾許？春縱在，與誰同！<br>
+            隋堤三月水溶溶。背歸鴻，去吳中。<br>
+            回首彭城，清泗與淮通。欲寄相思千點淚，流不到，楚江東。<br>
+            </h1>
+            <h2 style="color:rgb(216, 250, 225)">譯文<br>
+            流落在滾滾紅塵中，人在天涯，思緒無窮！已經相逢了，可在一起時候的歡樂卻是那麼短暫。<br>
+            在我臨行之時，握著佳人纖細的玉手，欲語還休，只得流淚對著漫天飄零的落花。<br>
+            隋堤在陽春三月裡的時候，水面上波光粼粼。我卻要在此時和向北歸家的鴻鵠背道而馳，<br>
+            遠去南方的吳中，回頭遠望這第二故鄉般的徐州，我心潮澎湃。<br>
+            清澈的泗水和徐州的淮河相通，我想要把相思離別的眼淚寄給徐州，卻是流不到楚江的東面啊！<br>
+            </h2>
+        </div>
+
+    <div class="poem" id="poem4">
+    <h1 id="poem4"  style="color:rgb(188, 239, 246)">江城子·密州出獵 蘇軾</h1>
+    <h1  style="color:white">
+        老夫聊發少年狂，左牽黃，右擎蒼，錦帽貂裘，千騎卷平岡。<br>
+        為報傾城隨太守，親射虎，看孫郎。<br>
+        酒酣胸膽尚開張，鬢微霜，又何妨？<br>
+        持節雲中，何日遣馮唐？<br>
+        會挽雕弓如滿月，西北望，射天狼。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        姑且讓老夫我表現（展示）一下少年的輕狂（或狂傲），左手牽著黃犬，右手舉起蒼鷹。隨從將士戴上錦蒙帽穿好貂皮裘，率領隨從和千騎席捲平展的山岡。<br>
+        為了報答全城的人跟隨我出獵的盛意，我要像昔日的孫權一樣親自射殺猛虎。<br>
+        我雖沉醉但胸懷開闊膽略興張。鬢邊白髮猶如微霜，這又有何妨！<br>
+        什麼時候你會派遣人拿著符節去邊地雲中，像漢文帝派遣馮唐。<br>
+        我要緊握強弓，把對敵人的仇恨凝聚在拉得圓如滿月的弓上，看準西北的敵人，狠狠地射殺敵人。<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem5">
+    <h1 id="poem5"  style="color:rgb(188, 239, 246)">江城子·畫樓簾幕卷新晴 盧祖皋</h1>
+    <h1 style="color:white">
+        畫樓簾幕卷新晴。掩銀屏，曉寒輕。<br>
+        墜粉飄香，日日喚愁生。<br>
+        暗數十年湖上路，能幾度，著娉婷？<br>
+        年華空自感飄零。擁春醒。對誰醒？<br>
+        天闊雲閒，無處覓蕭聲。<br>
+        載酒買花年少事，渾不似、舊心情。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        畫樓上捲起了幕簾，展開一片新晴，清晨的寒意很輕微，我掩緊銀白色的屏風。<br>
+        墜落的一片片花瓣飄來淡淡的清香，天天都令人產生愁情。<br>
+        暗暗地計算著十年間西湖上往返行程，有幾次能遇著美麗姑娘的鍾情，能與佳人幽歡盡興。<br>
+        我徙然感到韶華易逝，容華凋零，終日在春酒中留連光景。沒有知心的人可以交談，對誰人也用不著清醒。<br>
+        天大地大，無處可以再次尋找那悠揚歡樂的簫聲。<br>
+        即使也跟年輕時那樣買花攜酒，但是卻完全沒有了當時的那種心情。<br>
+    </h2>
+</div>
+
+<div class="poem" id="poem6">
+    <h1 id="poem6"  style="color:rgb(188, 239, 246)">采桑子·輕舟短棹西湖好 歐陽修</h1>
+    <h1 style="color:white">
+        輕舟短棹西湖好，綠水逶迤，芳草長堤，隱隱笙歌處處隨。<br>
+        無風水面琉璃滑，不覺船移，微動漣漪，驚起沙禽掠岸飛。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        西湖風光好，駕輕舟劃短槳多么逍遙。 <br>
+        碧綠的湖水綿延不斷，長堤上花草散出芳香。<br>
+        隱隱傳來的音樂歌唱，像是隨著船兒在湖上飄蕩。<br>
+        無風的水面，光滑得好似琉璃一樣，不覺得船兒在前進，只見微微的細浪在船邊蕩漾。<br>
+        看，被船兒驚起的水鳥，正掠過湖岸在飛翔。<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem7">
+    <h1 id="poem7" style="color:rgb(188, 239, 246)">采桑子·春深雨過西湖好 歐陽修</h1>
+    <h1 style="color:white">
+        春深雨過西湖好，百卉爭妍。蝶亂蜂喧。晴日催花暖欲然。<br>
+        蘭橈畫舸悠悠去，疑是神仙。返照波間。水闊風高揚管弦。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        春光深濃，雨過天晴，西湖景色更顯美好。<br>
+        百花百草爭奇鬥豔，蝴蝶蜜蜂紛飛喧鬧，晴朗的陽光照耀花兒暖熱得像要燃燒一樣。<br>
+        木蘭做的船槳劃著名畫舸悠然離去，就好像是天上神仙的光輝返照湖上碧波，水面遼闊，風高氣爽，船上的人悠揚地奏起了管弦。<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem8">
+    <h1 id="poem8" style="color:rgb(188, 239, 246)">采桑子·畫船載酒西湖好 歐陽修</h1>
+    <h1 style="color:white">
+        畫船載酒西湖好，急管繁弦，玉盞催傳，穩泛平波任醉眠。<br>
+        行雲卻在行舟下，空水澄鮮，俯仰留連，疑是湖中別有天。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        西湖風光好，乘畫船載著酒肴在湖中游賞，急促繁喧的樂聲中，不停地傳著酒杯。<br>
+        風平浪靜，緩緩前進的船兒中安睡著醉倒的客人。<br>
+        醉眼俯視湖中，白雲在船下浮動，清澈的湖水好似空然無物。<br>
+        仰視藍天，俯視湖面，水天相映使人疑惑，湖中另有一個世界。<br>
+    </h2>
+    </div>
+
+
+    <div class="poem" id="poem9">
+        <h1 id="poem9" style="color:rgb(188, 239, 246)">采桑子·群芳過后西湖好 歐陽修</h1>
+        <h1 style="color:white">
+            群芳過后西湖好，狼籍殘紅。飛絮濛濛。垂柳闌干盡日風。<br>
+            笙歌散盡游人去，始覺春空。垂下簾櫳。雙燕歸來細雨中。<br>
+        </h1>
+        <h2 style="color:rgb(216, 250, 225)">譯文<br>
+            雖說是百花凋落，暮春時節的西湖依然是美的，殘花輕盈飄落，點點殘紅在紛雜的枝葉間分外醒目；<br>
+            柳絮時而飄浮，時而飛旋，舞弄得迷迷蒙蒙；<br>
+            楊柳向下垂落，縱橫交錯，在和風中隨風飄蕩，搖曳多姿，在和煦的春風中，怡然自得，整日輕拂著湖水。<br>
+            游人盡興散去，笙簫歌聲也漸漸靜息，才開始覺得一片空寂，又仿佛正需要這份安謐。<br>
+            回到居室，拉起窗簾，等待著燕子的來臨，只見雙燕從蒙蒙細雨中歸來，這才拉起了簾子。<br>
+        </h2>
+        </div>
+
+
+    <div class="poem" id="poem10">
+    <h1 id="poem10" style="color:rgb(188, 239, 246)">采桑子·何人解賞西湖好 歐陽修</h1>
+    <h1 style="color:white">
+        何人解賞西湖好，佳景無時。飛蓋相追。貪向花間醉玉卮。<br>
+        誰知閑憑闌干處，芳草斜暉。水遠煙微。一點滄洲白鷺飛。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        誰能看得懂西湖的美麗？<br>
+        任何時候都是美景。驅車去追尋。<br>
+        只愿在花叢綠樹中飲酒貪歡。<br>
+        誰知道隨意站立在那水氣交錯的迷離之中，綠草斜陽正美。<br>
+        水波幽遠，煙霧飄渺，白鷺飛來，仿佛水濱之間只有一點。<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem11">
+    <h1 id="poem11" style="color:rgb(188, 239, 246)">采桑子·荷花開后西湖好 歐陽修</h1>
+    <h1  style="color:white">
+        荷花開后西湖好，載酒來時。不用旌旗。前后紅幢綠蓋隨。<br>
+        畫船撐入花深處，香泛金卮。煙雨微微。一片笙歌醉里歸。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        西湖風光好，荷花開后清香繚繞，劃船載著酒宴來賞玩，用不著旌旗儀仗，自有紅花為幢綠葉為蓋隨船而來。<br>
+        彩畫游船駛進了荷花叢的深處，金杯上泛起加了荷香的酒香。<br>
+        傍晚煙霧夾著微雨，在一片音樂歌聲里，船兒載著醉倒的游客歸去。<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem12">
+    <h1 id="poem12" style="color:rgb(188, 239, 246)">采桑子·天容水色西湖好 歐陽修</h1>
+    <h1  style="color:white">
+        天容水色西湖好，云物俱鮮。鷗鷺閑眠。應慣尋常聽管弦。<br>
+        風清月白偏宜夜，一片瓊田。誰羨驂鸞。人在舟中便是仙。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        西湖風光好，天光水色融成一片，景物都那么鮮麗。<br>
+        鷗鳥白鷺安穩地睡眠，它們早就聽慣了不停的管弦樂聲。<br>
+        那風清月白的夜晚更是迷人，湖面好似一片白玉鋪成的田野，有誰還會羨慕乘鸞飛升成仙呢，這時人在游船中就好比是神仙啊！<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem13">
+    <h1 id="poem13" style="color:rgb(188, 239, 246)">采桑子·殘霞夕照西湖好 歐陽修</h1>
+    <h1 style="color:white">
+        殘霞夕照西湖好，花塢蘋汀，十頃波平，野岸無人舟自橫。<br>
+        西南月上浮云散，軒檻涼生。蓮芰香清。水面風來酒面醒。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        西湖風光好，你看那夕陽映著晚霞的暮色，岸上的花塢，長滿水草的小洲一片橙紅。<br>
+        寬廣的湖面波平似鏡，小船橫靠在那靜寂無人的岸邊。浮云消散，西南方露出了明月。<br>
+        傍水的欄桿邊上涼風習習，帶來了陣陣蓮荷清香。這拂水的涼風，吹醒了游人的酒意。<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem14">
+    <h1 id="poem14" style="color:rgb(188, 239, 246)">采桑子·平生為愛西湖好 歐陽修</h1>
+    <h1 style="color:white">
+        平生為愛西湖好，來擁朱輪。富貴浮雲，俯仰流年二十春。<br>
+        歸來恰似遼東鶴，城郭人民，觸目皆新，誰識當年舊主人？<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        我平生因為喜愛西湖的風光美妙，所以到這裡任最高地方長官（朱輪為古代貴官所乘的車），可富貴像浮雲一樣地過去了，不知不覺已過了二十個春天。<br>
+        這次歸來，就像離家千年才化鶴歸來的仙人丁令威，無論是城郭、人民等等，一切都是過去所未見。有誰還能認得當年的舊主人——曾任當地長官的我啊！<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem15">
+    <h1 id="poem15"  style="color:rgb(188, 239, 246)">長相思·蘋滿溪 歐陽修</h1>
+    <h1  style="color:white">
+        蘋滿溪，柳繞堤。相送行人溪水西，回時隴月低。<br>
+        煙霏霏，風淒淒。重倚朱門聽馬嘶，寒鷗相對飛。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        青蘋滿溪，垂柳繞堤，我相送行人到溪水西邊，不得不回去，回去時山月低垂，天色已將拂曉。<br>
+        山水原野，煙靄霏霏，寒風淒淒。轉身背靠朱門，只聽得路上過往的馬嘶聲，只見寒鷗相對而飛。<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem16">
+    <h1 id="poem16"  style="color:rgb(188, 239, 246)">長相思·花似伊 歐陽修</h1>
+    <h1 style="color:white">
+        花似伊。柳似伊。花柳青春人別離。低頭雙淚垂。<br>
+        長江東。長江西。兩岸鴛鴦兩處飛。相逢知幾時。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        看著花兒像你一樣，柳枝像你一樣；花兒柳枝已青的春天，人卻要別離，低下頭不禁流下兩行清淚。<br>
+    長江的東邊，還有那長江的西邊，兩岸的鴛鴦在東西兩處飛舞著，（我們）什麼時候才能再次相逢呢？<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem17">
+    <h1 id="poem17" style="color:rgb(188, 239, 246)">南歌子·鳳髻金泥帶 歐陽修</h1>
+    <h1 style="color:white">
+        鳳髻金泥帶，龍紋玉掌梳。<br>
+        走來窗下笑相扶，愛道畫眉深淺入時無？<br>
+        弄筆偎人久，描花試手初。<br>
+        等閑妨了繡功夫，笑問鴛鴦兩字怎生書？<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        手持巴掌大小的龍形玉梳，用鳳釵及金絲帶把頭發梳飾成髻。<br>
+        妻子走到窗下依偎在丈夫的懷里，問道“眉色深淺合不合適宜？”<br>
+        她的纖手擺弄著筆管，長時間依偎在丈夫身邊，試著描畫刺繡的花樣，<br>
+        卻不知不覺耽擱了刺繡，笑著問丈夫：“鴛鴦二字怎么寫？”<br>
+    </h2>
+    </div>
+
+    <div class="poem" id="poem18">
+    <h1 id="poem18"  style="color:rgb(188, 239, 246)">少年游·欄干十二獨憑春 歐陽修</h1>
+    <h1 style="color:white">
+        欄干十二獨憑春，晴碧遠連云。<br>
+        千里萬里，二月三月，行色苦愁人。<br>
+        謝家池上，江淹浦畔，吟魄與離魂。<br>
+        那堪疏雨滴黃昏。更特地、憶王孫。<br>
+    </h1>
+    <h2 style="color:rgb(216, 250, 225)">譯文<br>
+        春天的日子，獨自憑欄遠眺，倚遍了一個個欄杆。<br>
+        這是一個晴日，碧綠的'芳草綿延，與天邊的雲彩相連。<br>
+        放眼遠處，遼闊無際，千里萬里，時令正是盛春的二月三月間，遠行之人啊，你去也，行色匆匆，令我愁苦無窮。<br>
+        謝家池塘邊，江淹浦的岸邊，獨自吟詩頌苦。<br>
+        怎能承受喲，黃昏時節，又飄落幾點疏疏的雨滴，更何況，此時此地，又想起了遠行之人。<br>
+    </h2>
+    </div>
+
+
+    <div class="poem" id="poem19">
+        <h1 id="poem19"  style="color:rgb(188, 239, 246)">玉樓春·尊前擬把歸期說 歐陽修</h1>
+        <h1 style="color:white">
+            尊前擬把歸期說。未語春容先慘咽。<br>
+            人生自是有情癡，此恨不關風與月。<br>
+            離歌且莫翻新闋。一曲能教腸寸結。<br>
+            直須看盡洛城花，始共春風容易別。<br>
+        </h1>
+        <h2 style="color:rgb(216, 250, 225)">譯文<br>
+            樽前擬把歸期說定，一杯心切情切，欲說時佳人無語滴淚，如春風嫵媚的嬌容，先自凄哀低咽。<br>
+            啊，人生自是有情，情到深處癡絕，這凄凄別恨不關涉——樓頭的清風，中天的明月。<br>
+            餞別的酒宴前，莫再演唱新的一闋，清歌一曲，已讓人愁腸寸寸郁結。<br>
+            啊，此時只需要把滿城牡丹看盡，你與我同游相攜，這樣才會——少些滯重的傷感，淡然無憾地與歸去的春風辭別。<br>
+        </h2>
+    </div>
+
+    <div class="poem" id="poem20">
+        <h1 id="poem20"  style="color:rgb(188, 239, 246)">玉樓春·別后不知君遠近 歐陽修</h1>
+        <h1 style="color:white">
+            別后不知君遠近。觸目凄涼多少悶。<br>
+            漸行漸遠漸無書，水闊魚沉何處問。<br>
+            夜深風竹敲秋韻。萬葉千聲皆是恨。<br>
+            故欹單枕夢中尋，夢又不成燈又燼。<br>
+        </h1>
+        <h2 style="color:rgb(216, 250, 225)">譯文<br>
+            自從分別之后，不知你已經到了何方？眼里心中都是凄涼與愁悶，生出不盡的憂愁！<br>
+            你越走越遠，最后竟斷了音信；江水是何等的寬闊，魚兒深深地游在水底，我又能向何處去打聽你的消息？<br>
+            昨夜里大風吹得竹林處處作響，傳遞著深秋的韻律，每一片葉子的聲響都似乎在訴說著怨惱。<br>
+            我有心斜倚著單枕，希望夢中能與你相遇，可惜夢做不成，無奈燈芯，又在秋風中燃成燼。<br>
+        </h2>
+    </div>
+
+    <script>
+        function displayCurrentTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var timeString = hours + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+            document.getElementById("current-time").textContent = "Current Time: " + timeString;
+        }
+
+        const poems = document.querySelectorAll('.poem');
+
+        // Add click event listener to each navigation link
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+
+                // Hide all poems
+                poems.forEach(poem => {
+                    poem.classList.remove('active');
+                });
+
+                // Show the poem corresponding to the clicked link
+                const poemId = this.getAttribute('href').substring(1);
+                const poem = document.getElementById(poemId);
+                poem.classList.add('active');
+
+            });
+        });
+
+        // 更新時間，每秒執行一次
+        setInterval(displayCurrentTime, 1000);
+
+        // 頁面加載時立即顯示時間
+        displayCurrentTime();
+    </script>
+</body>
+</html>
